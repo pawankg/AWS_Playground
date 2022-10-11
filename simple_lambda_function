@@ -1,0 +1,24 @@
+# Lambda Function code:
+import json
+
+def lambda_handler(event, context):
+    
+    message = "Hello {} {}, Keep being awesome!".format(event["first_name"], event["last_name"])
+	
+	# Print will send the output to the CloudWatch console
+    print(message)
+	
+	# Return will show the output in lambda test console
+    return {
+        'Message': message
+    }
+
+
+# Test event JSON:
+{
+  "first_name": "P",
+  "last_name": "k"
+}
+
+
+# Note: Always remember to deploy Lambda after any code change before testing.
